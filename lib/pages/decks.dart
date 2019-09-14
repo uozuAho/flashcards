@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'add_deck.dart';
-import 'deck_list.dart';
+import '../widgets/deck_list.dart';
 
 class DecksPage extends StatelessWidget {
   @override

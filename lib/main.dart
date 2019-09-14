@@ -2,7 +2,7 @@ import 'package:flashcards/models/decks.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'widgets/decks_page.dart';
+import 'pages/decks.dart';
 
 void main() => runApp(
     ChangeNotifierProvider(
