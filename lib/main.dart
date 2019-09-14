@@ -1,4 +1,5 @@
 import 'package:flashcards/models/decks.dart';
+import 'package:flashcards/widgets/add_deck.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,12 +17,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flash cards',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flash cards'),
-        ),
-        body: DeckList(),
-      )
+      home: DecksPage()
+    );
+  }
+}
+
+class DecksPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Decks'),
+      ),
+      body: DeckList(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AddDeck()));
+        },
+      ),
     );
   }
 }
