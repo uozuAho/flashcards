@@ -1,3 +1,4 @@
+import 'package:flashcards/flashcard.dart';
 import 'package:flutter/material.dart';
 
 class DeckList extends StatelessWidget {
@@ -8,13 +9,18 @@ class DeckList extends StatelessWidget {
         itemCount: 10,
         itemBuilder: (context, i) {
           if (i.isOdd) return Divider();
-          return _buildRow();
+          return _buildRow(context);
         });
   }
 
-  Widget _buildRow() {
+  Widget _buildRow(BuildContext context) {
     return ListTile(
       title: Text('deck 1'),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => FlashCard()));
+      },
     );
   }
 }
