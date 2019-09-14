@@ -7,14 +7,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flash cards',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flash cards'),
         ),
+        body: FlashCard(),
       )
+    );
+  }
+}
+
+class FlashCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        child: Column(
+          children: <Widget>[
+            Text('What is the word for 1')
+          ],
+        ),
+      ),
     );
   }
 }
