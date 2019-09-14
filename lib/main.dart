@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'deck_list.dart';
-import 'flashcard.dart';
+import 'widgets/deck_list.dart';
 
 void main() => runApp(MyApp());
 

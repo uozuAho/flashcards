@@ -1,4 +1,4 @@
-import 'package:flashcards/flashcard.dart';
+import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
 
 class DeckList extends StatelessWidget {
