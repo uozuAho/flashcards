@@ -5,10 +5,18 @@ class FlashCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        child: Column(
-          children: <Widget>[
-            Text('What is the word for 1')
-          ],
+        child: InkWell(
+          splashColor: Colors.blue.withAlpha(30),
+          onTap: () {
+            print('Card tapped.');
+          },
+          child: Container(
+            width: 300,
+            height: 300,
+            child: Center(
+              child: Text('What is the word for 1?'),
+            )
+          ),
         ),
       ),
     );
