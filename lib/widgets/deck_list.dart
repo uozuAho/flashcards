@@ -1,19 +1,15 @@
+import 'package:flashcards/decks_model.dart';
 import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DeckList extends StatelessWidget {
-  final List<String> _deckNames = [
-    'deck 1',
-    'deck 2',
-    'deck 3',
-    'deck 4',
-  ];
-
   @override
   Widget build(BuildContext context) {
+    var decks = Provider.of<DecksModel>(context);
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
-        itemCount: _deckNames.length * 2,
+        itemCount: decks.numberOfDecks * 2,
         itemBuilder: (context, i) {
           if (i.isOdd) return Divider();
           var deckIndex = i ~/ 2;
@@ -22,8 +18,9 @@ class DeckList extends StatelessWidget {
   }
 
   Widget _buildRow(BuildContext context, int deckIndex) {
+    var decks = Provider.of<DecksModel>(context);
     return ListTile(
-      title: Text(_deckNames[deckIndex]),
+      title: Text(decks.getDeckByPosition(deckIndex)),
       onTap: () {
         Navigator.push(
           context,
