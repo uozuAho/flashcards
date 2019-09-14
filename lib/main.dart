@@ -1,4 +1,4 @@
-import 'package:flashcards/decks_model.dart';
+import 'package:flashcards/models/decks.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

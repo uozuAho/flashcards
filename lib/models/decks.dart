@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 
 class DecksModel extends ChangeNotifier {
@@ -8,6 +6,7 @@ class DecksModel extends ChangeNotifier {
     'deck 2',
     'deck 3',
     'deck 4',
+    'deck 5',
   ];
 
   int get numberOfDecks => _deckNames.length;
