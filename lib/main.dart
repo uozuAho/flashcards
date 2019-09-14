@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'deck_list.dart';
 import 'flashcard.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flash cards'),
         ),
-        body: FlashCard(),
+        body: DeckList(),
       )
     );
   }
