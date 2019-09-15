@@ -3,25 +3,27 @@ import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
 
 class DeckViewer extends StatefulWidget {
-  final String _deckName;
+  final business.FlashcardDeck _deck;
 
-  DeckViewer(this._deckName);
+  DeckViewer(this._deck);
 
   @override
-  _DeckViewerState createState() => _DeckViewerState(_deckName);
+  _DeckViewerState createState() => _DeckViewerState(_deck);
 }
 
 class _DeckViewerState extends State<DeckViewer> {
-  final String _deckName;
+  final business.FlashcardDeck _deck;
 
-  _DeckViewerState(this._deckName);
+  int _cardIndex = 0;
+
+  _DeckViewerState(this._deck);
 
   @override
   Widget build(BuildContext context) {
-    var card = business.Flashcard('front', 'back');
+    var card = _deck.cards[_cardIndex];
     return Scaffold(
       appBar: AppBar(
-        title: Text(_deckName),
+        title: Text(_deck.name),
       ),
       body: Flashcard(card),
     );
