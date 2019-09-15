@@ -6,8 +6,14 @@ class FlashcardDeck {
 }
 
 class Flashcard {
-  final String frontText;
-  final String backText;
+  final CardSide front;
+  final CardSide back;
 
-  Flashcard(this.frontText, this.backText);
+  Flashcard(this.front, this.back);
+}
+
+class CardSide {
+  final String text;
+
+  CardSide(this.text);
 }
