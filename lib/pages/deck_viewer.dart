@@ -21,7 +21,7 @@ class _DeckViewerState extends State<DeckViewer> {
       appBar: AppBar(
         title: Text(_deckName),
       ),
-      body: FlashCard(),
+      body: Flashcard(),
     );
   }
 }

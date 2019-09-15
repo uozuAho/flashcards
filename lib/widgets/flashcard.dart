@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FlashCard extends StatefulWidget {
+class Flashcard extends StatefulWidget {
   @override
-  _FlashCardState createState() => _FlashCardState();
+  _FlashcardState createState() => _FlashcardState();
 }
 
-class _FlashCardState extends State<FlashCard> {
+class _FlashcardState extends State<Flashcard> {
   final String _frontText = 'What is the word for 1?';
   final String _backText = 'One';
 
