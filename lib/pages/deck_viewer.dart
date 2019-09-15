@@ -1,3 +1,4 @@
+import 'package:flashcards/business/deck.dart' as business;
 import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +18,12 @@ class _DeckViewerState extends State<DeckViewer> {
 
   @override
   Widget build(BuildContext context) {
+    var card = business.Flashcard('front', 'back');
     return Scaffold(
       appBar: AppBar(
         title: Text(_deckName),
       ),
-      body: Flashcard(),
+      body: Flashcard(card),
     );
   }
 }
