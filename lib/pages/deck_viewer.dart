@@ -1,59 +1,55 @@
-import 'package:flashcards/business/deck.dart' as business;
+import 'package:flashcards/models/current_deck.dart';
 import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class DeckViewer extends StatefulWidget {
-  final business.FlashcardDeck _deck;
-
-  DeckViewer(this._deck);
-
-  @override
-  _DeckViewerState createState() => _DeckViewerState(_deck);
-}
-
-class _DeckViewerState extends State<DeckViewer> {
-  final business.FlashcardDeck _deck;
-
-  int _cardIndex = 0;
-
-  _DeckViewerState(this._deck);
-
+class DeckViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var card = _deck.cards[_cardIndex];
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(_deck.name),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Flashcard(card),
-          ),
-          _ControlBar()
-        ],
-      )
+    return Consumer<CurrentDeck>(
+      builder: (context, deck, child) {
+        return Scaffold(
+            appBar: AppBar(
+              title: Text(deck.deckName),
+            ),
+            body: Column(
+              children: [
+                Expanded(
+                  child: Flashcard(),
+                ),
+                _ControlBar(
+                  () {deck.nextCard();},
+                  () {deck.nextCard();}
+                )
+              ],
+            )
+        );
+      }
     );
   }
 }
 
 class _ControlBar extends StatelessWidget {
+
+  final Function _onBadPressed;
+  final Function _onGoodPressed;
+
+  _ControlBar(this._onBadPressed, this._onGoodPressed);
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return ButtonBar(
+      alignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
-          children: [
-            Icon(Icons.cancel),
-            Text('bad')
-          ],
+        IconButton(
+          icon: Icon(Icons.cancel),
+          disabledColor: Colors.red,
+          onPressed: _onBadPressed,
         ),
-        Column(
-          children: [
-            Icon(Icons.done),
-            Text('good')
-          ],
+        IconButton(
+          icon: Icon(Icons.done),
+          disabledColor: Colors.green,
+          onPressed: _onGoodPressed,
         )
       ],
     );

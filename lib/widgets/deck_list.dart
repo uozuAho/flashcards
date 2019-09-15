@@ -1,3 +1,4 @@
+import 'package:flashcards/models/current_deck.dart';
 import 'package:flashcards/models/decks.dart';
 import 'package:flashcards/pages/deck_viewer.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +25,11 @@ class DeckList extends StatelessWidget {
     return ListTile(
       title: Text(deckName),
       onTap: () {
-        final _deck = decks.loadByName(deckName);
+        var currentDeck = Provider.of<CurrentDeck>(context);
+        currentDeck.set(decks.loadByName(deckName));
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DeckViewer(_deck)));
+          MaterialPageRoute(builder: (context) => DeckViewer()));
       },
     );
   }
