@@ -18,8 +18,8 @@ class DeckViewer extends StatelessWidget {
                   child: Flashcard(),
                 ),
                 _ControlBar(
-                  () {deck.nextCard();},
-                  () {deck.nextCard();}
+                  () {deck.BAD();},
+                  () {deck.correctlyAnswered();}
                 )
               ],
             )
@@ -43,12 +43,12 @@ class _ControlBar extends StatelessWidget {
       children: [
         IconButton(
           icon: Icon(Icons.cancel),
-          disabledColor: Colors.red,
+          color: Colors.red,
           onPressed: _onBadPressed,
         ),
         IconButton(
           icon: Icon(Icons.done),
-          disabledColor: Colors.green,
+          color: Colors.green,
           onPressed: _onGoodPressed,
         )
       ],

@@ -2,14 +2,8 @@ import 'package:flashcards/business/deck.dart';
 import 'package:flutter/material.dart';
 
 class DecksModel extends ChangeNotifier {
-  final List<String> _deckNames = [
-    'deck 1',
-    'deck 2',
-    'deck 3',
-    'deck 4',
-  ];
-
-  int get numberOfDecks => _deckNames.length;
+  List<String> _deckNames = List<String>.from(_testDataDecks.keys);
+  int get numberOfDecks => _testDataDecks.length;
 
   String getDeckNameByPosition(int position) => _deckNames[position];
 
@@ -19,9 +13,22 @@ class DecksModel extends ChangeNotifier {
   }
 
   FlashcardDeck loadByName(String deckName) {
-    return FlashcardDeck(deckName, [
-      Flashcard(CardSide('front 1'), CardSide('back 1')),
-      Flashcard(CardSide('front 2'), CardSide('back 2'))
-    ]);
+    return _testDataDecks[deckName];
   }
 }
+
+final _testDataDecks = {
+  'cyrillic numbers': FlashcardDeck('cyrillic numbers', [
+    Flashcard(CardSide('ноль'), CardSide('nol - 0')),
+    Flashcard(CardSide('один'), CardSide('a\'deen - 1')),
+    Flashcard(CardSide('два'), CardSide('dva - 2')),
+    Flashcard(CardSide('три'), CardSide('tree - 3')),
+    Flashcard(CardSide('четыре'), CardSide('chye-tir-ye - 4')),
+    Flashcard(CardSide('пять'), CardSide('pyat - 5')),
+    Flashcard(CardSide('шесть'), CardSide('shest - 6')),
+    Flashcard(CardSide('семь'), CardSide('syem - 7')),
+    Flashcard(CardSide('восемь'), CardSide('vo-syem - 8')),
+    Flashcard(CardSide('девять'), CardSide('dyev-yat - 9')),
+    Flashcard(CardSide('десять'), CardSide('dyes-ya - 10')),
+  ])
+};

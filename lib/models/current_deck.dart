@@ -13,8 +13,13 @@ class CurrentDeck extends ChangeNotifier {
     notifyListeners();
   }
 
-  void nextCard() {
-    _deck.putTopCardOnBottom();
+  void correctlyAnswered() {
+    _deck.correctlyAnswered();
+    notifyListeners();
+  }
+
+  void BAD() {
+    _deck.correctlyAnswered();
     notifyListeners();
   }
 
