@@ -1,3 +1,4 @@
+import 'package:flashcards/business/deck.dart';
 import 'package:flutter/material.dart';
 
 class DecksModel extends ChangeNotifier {
@@ -15,5 +16,11 @@ class DecksModel extends ChangeNotifier {
   void createNewDeck(String deckName) {
     _deckNames.add(deckName);
     notifyListeners();
+  }
+
+  FlashcardDeck loadByName(String deckName) {
+    return FlashcardDeck('aaa deck', [
+      Flashcard('front', 'back')
+    ]);
   }
 }

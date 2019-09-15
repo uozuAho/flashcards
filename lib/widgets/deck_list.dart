@@ -1,4 +1,3 @@
-import 'package:flashcards/business/deck.dart';
 import 'package:flashcards/models/decks.dart';
 import 'package:flashcards/pages/deck_viewer.dart';
 import 'package:flutter/material.dart';
@@ -25,15 +24,10 @@ class DeckList extends StatelessWidget {
     return ListTile(
       title: Text(deckName),
       onTap: () {
-        var _deckoo = FlashcardDeck(
-            'a deck',
-            [
-              Flashcard('front', 'back')
-            ]
-        );
+        final _deck = decks.loadByName(deckName);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DeckViewer(_deckoo)));
+          MaterialPageRoute(builder: (context) => DeckViewer(_deck)));
       },
     );
   }
