@@ -10,9 +10,9 @@ class DecksModel extends ChangeNotifier {
 
   int get numberOfDecks => _deckNames.length;
 
-  String getDeckByPosition(int position) => _deckNames[position];
+  String getDeckNameByPosition(int position) => _deckNames[position];
 
-  void add(String deckName) {
+  void createNewDeck(String deckName) {
     _deckNames.add(deckName);
     notifyListeners();
   }

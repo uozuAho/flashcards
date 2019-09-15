@@ -1,5 +1,4 @@
 import 'package:flashcards/models/decks.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +25,7 @@ class _AddDeckState extends State<AddDeck> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           var decks = Provider.of<DecksModel>(context);
-          decks.add(textController.text);
+          decks.createNewDeck(textController.text);
           Navigator.pop(context);
         },
         child: Icon(Icons.done),

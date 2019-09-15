@@ -20,7 +20,7 @@ class DeckList extends StatelessWidget {
   Widget _buildRow(BuildContext context, int deckIndex) {
     var decks = Provider.of<DecksModel>(context);
     return ListTile(
-      title: Text(decks.getDeckByPosition(deckIndex)),
+      title: Text(decks.getDeckNameByPosition(deckIndex)),
       onTap: () {
         Navigator.push(
           context,
