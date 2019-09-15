@@ -7,7 +7,6 @@ class Flashcard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<CurrentDeck>(
       builder: (context, deck, child) {
-        final side = deck.facingUp ? deck.currentCard.front : deck.currentCard.back;
         return Center(
           child: Card(
             child: InkWell(
@@ -19,7 +18,7 @@ class Flashcard extends StatelessWidget {
                   width: 300,
                   height: 300,
                   child: Center(
-                      child: Text(side.text)
+                      child: Text(deck.showingCardSide.text)
                   )
               ),
             ),
