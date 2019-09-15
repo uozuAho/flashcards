@@ -20,7 +20,8 @@ class DecksModel extends ChangeNotifier {
 
   FlashcardDeck loadByName(String deckName) {
     return FlashcardDeck('aaa deck', [
-      Flashcard('front', 'back')
+      Flashcard('front 1', 'back 1'),
+      Flashcard('front 2', 'back 2')
     ]);
   }
 }

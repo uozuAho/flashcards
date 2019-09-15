@@ -25,7 +25,37 @@ class _DeckViewerState extends State<DeckViewer> {
       appBar: AppBar(
         title: Text(_deck.name),
       ),
-      body: Flashcard(card),
+      body: Column(
+        children: [
+          Expanded(
+            child: Flashcard(card),
+          ),
+          _ControlBar()
+        ],
+      )
+    );
+  }
+}
+
+class _ControlBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            Icon(Icons.cancel),
+            Text('bad')
+          ],
+        ),
+        Column(
+          children: [
+            Icon(Icons.done),
+            Text('good')
+          ],
+        )
+      ],
     );
   }
 }
