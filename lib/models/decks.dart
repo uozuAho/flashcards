@@ -9,6 +9,7 @@ class DecksModel extends ChangeNotifier {
 
   void createNewDeck(String deckName) {
     _deckNames.add(deckName);
+    _testDataDecks[deckName] = FlashcardDeck(deckName, []);
     notifyListeners();
   }
 

@@ -2,12 +2,7 @@ import 'package:flashcards/models/decks.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AddDeck extends StatefulWidget {
-  @override
-  _AddDeckState createState() => _AddDeckState();
-}
-
-class _AddDeckState extends State<AddDeck> {
+class AddDeck extends StatelessWidget {
   final textController = TextEditingController();
 
   @override
@@ -31,11 +26,5 @@ class _AddDeckState extends State<AddDeck> {
         child: Icon(Icons.done),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    textController.dispose();
-    super.dispose();
   }
 }
