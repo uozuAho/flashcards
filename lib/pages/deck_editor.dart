@@ -28,6 +28,9 @@ class DeckEditor extends StatelessWidget {
                     child: deck.isEmpty ? _NoCards() : Flashcard(),
                   ),
                 ],
+              ),
+              floatingActionButton: FloatingActionButton(
+                child: Icon(Icons.add),
               )
           );
         }
