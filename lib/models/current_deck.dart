@@ -8,6 +8,8 @@ class CurrentDeck extends ChangeNotifier {
 
   CardSide get showingCardSide => _deck.topCard.showingSide;
 
+  bool get isEmpty => _deck.isEmpty;
+
   void flipCard() {
     _deck.topCard.flip();
     notifyListeners();

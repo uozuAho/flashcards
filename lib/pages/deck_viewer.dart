@@ -26,7 +26,7 @@ class DeckViewer extends StatelessWidget {
             body: Column(
               children: [
                 Expanded(
-                  child: Flashcard(),
+                  child: deck.isEmpty ? _NoCards() : Flashcard(),
                 ),
                 _ControlBar(
                   () {deck.BAD();},
@@ -36,6 +36,15 @@ class DeckViewer extends StatelessWidget {
             )
         );
       }
+    );
+  }
+}
+
+class _NoCards extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text("no cards")
     );
   }
 }

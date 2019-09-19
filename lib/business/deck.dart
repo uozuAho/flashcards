@@ -7,6 +7,8 @@ class FlashcardDeck {
 
   Flashcard get topCard => _cards[_topCardIndex];
 
+  bool get isEmpty => _cards.isEmpty;
+
   void correctlyAnswered() {
     topCard.faceUp();
     _putTopCardOnBottom();

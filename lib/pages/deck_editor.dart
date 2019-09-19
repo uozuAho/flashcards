@@ -25,12 +25,21 @@ class DeckEditor extends StatelessWidget {
               body: Column(
                 children: [
                   Expanded(
-                    child: Flashcard(),
+                    child: deck.isEmpty ? _NoCards() : Flashcard(),
                   ),
                 ],
               )
           );
         }
+    );
+  }
+}
+
+class _NoCards extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text("no cards")
     );
   }
 }
