@@ -1,4 +1,5 @@
 import 'package:flashcards/models/current_deck.dart';
+import 'package:flashcards/pages/deck_editor.dart';
 import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,16 @@ class DeckViewer extends StatelessWidget {
         return Scaffold(
             appBar: AppBar(
               title: Text(deck.deckName),
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.edit),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => DeckEditor()));
+                  },
+                ),
+              ],
             ),
             body: Column(
               children: [
