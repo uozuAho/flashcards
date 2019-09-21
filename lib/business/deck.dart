@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class FlashcardDeck {
   final String name;
   final List<Flashcard> _cards;
@@ -19,6 +21,10 @@ class FlashcardDeck {
     if (_topCardIndex >= _cards.length) {
       _topCardIndex = 0;
     }
+  }
+
+  void shuffle() {
+    _cards.shuffle(Random());
   }
 }
 

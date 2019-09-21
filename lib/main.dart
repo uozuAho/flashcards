@@ -1,5 +1,5 @@
 import 'package:flashcards/business/deck_storage.dart';
-import 'package:flashcards/models/current_deck.dart';
+import 'package:flashcards/pages/deck_viewer_model.dart';
 import 'package:flashcards/models/decks.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +13,7 @@ void main() {
       MultiProvider(
         providers: [
           ChangeNotifierProvider(builder: (context) => DecksModel(deckStorage)),
-          ChangeNotifierProvider(builder: (context) => CurrentDeck())
+          ChangeNotifierProvider(builder: (context) => DeckViewerModel())
         ],
         child: MyApp(),
       )

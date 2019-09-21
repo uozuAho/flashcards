@@ -1,4 +1,4 @@
-import 'package:flashcards/models/current_deck.dart';
+import 'package:flashcards/pages/deck_viewer_model.dart';
 import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class DeckEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<CurrentDeck>(
+    return Consumer<DeckViewerModel>(
         builder: (context, deck, child) {
           return Scaffold(
               appBar: AppBar(

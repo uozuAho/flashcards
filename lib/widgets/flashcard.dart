@@ -1,11 +1,11 @@
-import 'package:flashcards/models/current_deck.dart';
+import 'package:flashcards/pages/deck_viewer_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Flashcard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<CurrentDeck>(
+    return Consumer<DeckViewerModel>(
       builder: (context, deck, child) {
         return Center(
           child: Card(

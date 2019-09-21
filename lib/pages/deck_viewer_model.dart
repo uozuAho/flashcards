@@ -1,7 +1,7 @@
 import 'package:flashcards/business/deck.dart';
 import 'package:flutter/material.dart';
 
-class CurrentDeck extends ChangeNotifier {
+class DeckViewerModel extends ChangeNotifier {
   FlashcardDeck _deck;
 
   String get deckName => _deck.name;
@@ -27,6 +27,11 @@ class CurrentDeck extends ChangeNotifier {
 
   void set(FlashcardDeck deck) {
     _deck = deck;
+    notifyListeners();
+  }
+
+  void shuffle() {
+    _deck.shuffle();
     notifyListeners();
   }
 }

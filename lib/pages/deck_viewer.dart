@@ -1,4 +1,4 @@
-import 'package:flashcards/models/current_deck.dart';
+import 'package:flashcards/pages/deck_viewer_model.dart';
 import 'package:flashcards/pages/deck_editor.dart';
 import 'package:flashcards/widgets/flashcard.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 class DeckViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<CurrentDeck>(
+    return Consumer<DeckViewerModel>(
       builder: (context, deck, child) {
         return Scaffold(
             appBar: AppBar(
@@ -15,10 +15,18 @@ class DeckViewer extends StatelessWidget {
               actions: [
                 IconButton(
                   icon: Icon(Icons.edit),
+                  tooltip: 'Edit',
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => DeckEditor()));
+                  },
+                ),
+                IconButton(
+                  icon: Icon(Icons.shuffle),
+                  tooltip: 'Shuffle',
+                  onPressed: () {
+                    deck.shuffle();
                   },
                 ),
               ],
