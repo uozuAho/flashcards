@@ -26,7 +26,7 @@ final _testDataDecks = {
     Flashcard(CardSide('семь'), CardSide('syem - 7')),
     Flashcard(CardSide('восемь'), CardSide('vo-syem - 8')),
     Flashcard(CardSide('девять'), CardSide('dyev-yat - 9')),
-    Flashcard(CardSide('десять'), CardSide('dyes-ya - 10')),
+    Flashcard(CardSide('десять'), CardSide('dyes-yat - 10')),
   ]),
 
   'Russian alphabet': FlashcardDeck('Russian alphabet', [
@@ -61,5 +61,31 @@ final _testDataDecks = {
     Flashcard(CardSide('Э'), CardSide('e in met')),
     Flashcard(CardSide('Ю'), CardSide('yu in you\'ll')),
     Flashcard(CardSide('Я'), CardSide('ya in yard')),
-  ])
+  ]),
+
+  'Russian alphabet mnemonics': FlashcardDeck('Russian alphabet mnemonics', [
+    Flashcard(CardSide('аз буки веди'), CardSide('az buki vedi')),
+    Flashcard(CardSide('глаголь добро есть'), CardSide('glagol\' dobro yest\'')),
+    Flashcard(CardSide('живете зело, земля, и иже и како люди'),
+        CardSide('zhivyete zelo, zyemlya, i izhe, i kako lyudi')),
+    Flashcard(CardSide('мыслете наш он покой'), CardSide('myslete nash on pokoy')),
+    Flashcard(CardSide('рцы слово твердо'), CardSide('rtsy slovo tvyerdo')),
+    Flashcard(CardSide('ук ферт хер'), CardSide('uk fert kher')),
+    Flashcard(CardSide('цы червь ша ер ять ю'), CardSide('tsy cherv\' sha yer yat\' yu')),
+  ]),
+
+  'Russian cockpit': FlashcardDeck('Russian cockpit', [
+    Flashcard(CardSide('скорость'), CardSide('skorost\' - speed')),
+    Flashcard(CardSide('высота'), CardSide('vysota - height')),
+    Flashcard(CardSide('давление'), CardSide('davleniye - pressure')),
+    Flashcard(CardSide('топливо'), CardSide('toplivo - fuel')),
+    Flashcard(CardSide('масло'), CardSide('maslo - oil')),
+    Flashcard(CardSide('воздух'), CardSide('vozdukh - air')),
+    Flashcard(CardSide('гидросистема'), CardSide('gïdrosïstema - hydraulic system')),
+    Flashcard(CardSide('двигатель'), CardSide('dvigatel\' - engine')),
+    Flashcard(CardSide('кислород'), CardSide('kislorod - oxygen')),
+    Flashcard(CardSide('аккумулятор'), CardSide('akkumulyator - battery')),
+    Flashcard(CardSide('генератор'), CardSide('generator')),
+    Flashcard(CardSide('ток'), CardSide('tok - current')),
+  ]),
 };
